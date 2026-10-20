@@ -292,6 +292,16 @@ section{padding-block:clamp(56px,8vw,104px)}
 .formbox iframe{display:block;width:100%;height:860px;border:0;background:var(--surface)}
 .foot a{color:inherit;text-decoration:none}
 .foot a:hover{color:var(--night-ink)}
+.next{margin-top:clamp(32px,4vw,48px);padding:clamp(20px,3vw,32px);border-radius:10px;border:1.5px dashed var(--line);display:flex;flex-direction:column;gap:22px}
+.next-head{display:flex;flex-direction:column;gap:8px;max-width:46em}
+.next-head .w{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-text)}
+.next-head h3{font-size:clamp(28px,3.4vw,36px)}
+.next-head p{color:var(--muted)}
+.next-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(24px,4vw,56px)}
+@media (max-width:720px){ .next-grid{grid-template-columns:minmax(0,1fr)} }
+.next-grid div{display:flex;flex-direction:column;gap:4px;padding-block:14px;border-top:1px solid var(--line)}
+.next-grid b{font-family:var(--display);font-size:22px;line-height:1.15}
+.next-grid span{font-size:15.5px;color:var(--muted)}
 footer{background:var(--night);color:var(--night-ink);padding-block:40px}
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center}
 .foot .key{--key-bg:#F2F4F5;--key-ink:#12181E;--key-edge:#9AA8B5;--s:36px}
@@ -517,7 +527,21 @@ footer{background:var(--night);color:var(--night-ink);padding-block:40px}
         <div><span class="w">Woche 1–4</span><h3>Debriefen</h3><p>Die Besatzungen nutzen Status 1 auf der Rückfahrt, so oft es passt.</p></div>
         <div><span class="w">Danach</span><h3>Auswerten</h3><p>Gemeinsam in der Wachenbesprechung: Was läuft gut, wo hakt es, welches Fortbildungsthema folgt daraus?</p></div>
       </div>
-      <p class="tech">Technik: Status 1 ist eine Web-App, die auch offline funktioniert. Sie läuft auf iOS und Android, lässt sich wie eine App auf den Startbildschirm legen und über die Geräteverwaltung des Trägers verteilen.</p>
+      <p class="tech">Technik: Status 1 ist eine Web-App, die auch offline funktioniert. Sie läuft auf iOS und Android, lässt sich wie eine App auf den Startbildschirm legen und über die Geräteverwaltung des Trägers verteilen. Im Pilot bleiben alle Daten auf dem jeweiligen Diensthandy.</p>
+
+      <div class="next">
+        <div class="next-head">
+          <span class="w">Nach dem Pilot</span>
+          <h3>Zentrale Auswertung für große Wachen</h3>
+          <p>Bei vielen Fahrzeugen muss die Wachenleitung nicht mehr jedes Handy einzeln auslesen. Die Debriefs aller Fahrzeuge laufen zusammen und erscheinen in einer gemeinsamen Auswertung im Browser.</p>
+        </div>
+        <div class="next-grid">
+          <div><b>Einfacher für die Leitung</b><span>Eine Auswertung für die ganze Wache, jederzeit im Browser abrufbar. Kein Einsammeln von Handys.</span></div>
+          <div><b>Noch anonymer</b><span>Gesendet wird nur die Wache, nie das Fahrzeug oder das Gerät. Einträge gehen gebündelt und zeitversetzt raus, IP-Adressen werden nicht gespeichert. Angezeigt werden nur Zeiträume und erst ab einer Mindestzahl an Debriefs.</span></div>
+          <div><b>Server in Deutschland</b><span>Betrieb bei einem deutschen Anbieter nach DSGVO, mit Auftragsverarbeitungsvertrag für den Träger.</span></div>
+          <div><b>Mitbestimmung von Anfang an</b><span>Betriebs- oder Personalrat und Datenschutzbeauftragte werden vor dem Start eingebunden. Die Anonymität ist technisch eingebaut und nachprüfbar.</span></div>
+        </div>
+      </div>
     </div>
   </section>
 
