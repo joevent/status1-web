@@ -302,6 +302,49 @@ section{padding-block:clamp(56px,8vw,104px)}
 .next-grid div{display:flex;flex-direction:column;gap:4px;padding-block:14px;border-top:1px solid var(--line)}
 .next-grid b{font-family:var(--display);font-size:22px;line-height:1.15}
 .next-grid span{font-size:15.5px;color:var(--muted)}
+.connect{display:flex;flex-direction:column;gap:16px;padding-top:20px;border-top:1.5px solid var(--line)}
+.connect-head{display:flex;flex-direction:column;gap:6px;max-width:46em}
+.connect-head b{font-family:var(--display);font-size:26px;line-height:1.1}
+.connect-head p{color:var(--muted)}
+.ways{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:760px){ .ways{grid-template-columns:minmax(0,1fr)} }
+.ways li{display:flex;flex-direction:column;gap:6px;padding:16px;border-radius:8px;background:var(--surface);border:1px solid var(--line);min-width:0}
+.ways .code{align-self:flex-start;font-family:var(--mono);font-size:12px;letter-spacing:.08em;padding:3px 8px;border-radius:4px;background:var(--key-bg);color:var(--key-ink)}
+.ways b{font-family:var(--display);font-size:21px;line-height:1.15}
+.ways li > span:last-child{font-size:15px;color:var(--muted)}
+.rights{font-size:15px;color:var(--muted);max-width:56em}
+.connect-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:clamp(20px,3vw,40px);align-items:center}
+@media (max-width:900px){ .connect-body{grid-template-columns:minmax(0,1fr)} }
+.connect-left{display:flex;flex-direction:column;gap:14px;min-width:0}
+.connect-left .ways{grid-template-columns:minmax(0,1fr)}
+.scan{margin:0;position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;align-items:end;padding:28px 20px 48px;border-radius:12px;background:#1B232C;min-width:0}
+.poster{position:relative;z-index:1;display:flex;flex-direction:column;gap:10px;padding:18px 16px;border-radius:6px;background:#FFFFFF;color:#12181E;transform:rotate(-3deg);box-shadow:0 18px 30px -18px rgba(0,0,0,.6)}
+.poster .p-head{display:flex;align-items:center;gap:8px}
+.poster .key{--s:26px;--key-bg:#12181E;--key-ink:#F2F4F5;--key-edge:#3A4652}
+.poster .key::after{background:#D9481E}
+.poster .wm{font-size:20px}
+.poster .wm small{color:#B23A12}
+.poster b{font-family:var(--display);font-size:18px;line-height:1.1}
+.poster > span{font-size:11.5px;line-height:1.35;color:#4A5560}
+.qr svg{display:block;width:100%;height:auto}
+.phone.mini{position:relative;z-index:2;width:100%;max-width:190px;justify-self:end;margin-left:-26px;margin-bottom:6px;aspect-ratio:190/380;padding:7px;border-radius:28px;transform:rotate(4deg)}
+.phone.mini .screen{border-radius:22px;padding:14px 11px 11px;gap:9px}
+.m-top{font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--night-muted)}
+.m-q{font-family:var(--display);font-weight:700;font-size:19px;line-height:1.05}
+.cam{position:relative;aspect-ratio:1/1;border-radius:10px;background:#2A333C;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.cam .qr.sm{width:62%;padding:6px;background:#F2F4F5;border-radius:3px;transform:rotate(-6deg)}
+.cam i{position:absolute;width:18%;height:18%;border:2.5px solid var(--night-accent)}
+.cam .c1{top:8%;left:8%;border-right:0;border-bottom:0;border-radius:6px 0 0 0}
+.cam .c2{top:8%;right:8%;border-left:0;border-bottom:0;border-radius:0 6px 0 0}
+.cam .c3{bottom:8%;left:8%;border-right:0;border-top:0;border-radius:0 0 0 6px}
+.cam .c4{bottom:8%;right:8%;border-left:0;border-top:0;border-radius:0 0 6px 0}
+.beam{position:absolute;left:10%;right:10%;top:50%;height:2px;background:var(--night-accent);box-shadow:0 0 10px var(--night-accent);opacity:.85}
+@media (prefers-reduced-motion: no-preference){ .beam{animation:beam 2.4s ease-in-out infinite alternate} @keyframes beam{from{top:18%}to{top:82%}} }
+.found{display:flex;flex-direction:column;gap:1px;padding:7px 9px;border-radius:8px;background:#14342A;border:1px solid #2F9A63;font-size:10.5px;line-height:1.3}
+.found b{font-size:11px;color:#7FD6A6}
+.m-btn{margin-top:auto;height:34px;flex:none;border-radius:9px;background:var(--night-accent);color:#1B0C06;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:16px}
+.scan figcaption{position:absolute;left:20px;right:20px;bottom:12px;font-size:12px;color:#93A2B0}
+@media (max-width:420px){ .scan{padding:22px 12px 40px} .phone.mini{margin-left:-14px} }
 footer{background:var(--night);color:var(--night-ink);padding-block:40px}
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center}
 .foot .key{--key-bg:#F2F4F5;--key-ink:#12181E;--key-edge:#9AA8B5;--s:36px}
@@ -541,6 +584,40 @@ footer{background:var(--night);color:var(--night-ink);padding-block:40px}
           <div><b>Server in Deutschland</b><span>Betrieb bei einem deutschen Anbieter nach DSGVO, mit Auftragsverarbeitungsvertrag für den Träger.</span></div>
           <div><b>Mitbestimmung von Anfang an</b><span>Betriebs- oder Personalrat und Datenschutzbeauftragte werden vor dem Start eingebunden. Die Anonymität ist technisch eingebaut und nachprüfbar.</span></div>
         </div>
+        <div class="connect">
+          <div class="connect-head">
+            <b>So kommen die Fahrzeuge zur Wache</b>
+            <p>Jede Wache hat ein eigenes Wachenkonto mit einem zufälligen Wachen-Code. Alle Fahrzeughandys werden einmal mit demselben Code verbunden. Der Server kann die Fahrzeuge deshalb nicht unterscheiden.</p>
+          </div>
+          <div class="connect-body">
+          <div class="connect-left">
+          <ol class="ways">
+            <li><span class="code">Link</span><b>Über die Geräteverwaltung</b><span>Die IT verteilt die App mit dem Code im Link. Niemand muss etwas eintippen.</span></li>
+            <li><span class="code">QR</span><b>QR-Code in der Fahrzeughalle</b><span>Beim ersten Start fragt die App „Mit Wache verbinden?“. Kamera drauf, fertig.</span></li>
+            <li><span class="code">K7P4</span><b>Code eintippen</b><span>In den Einstellungen der App, geschützt durch die Wachen-PIN.</span></li>
+          </ol>
+          <p class="rights">Die Handys können nur senden, nicht lesen. Die Auswertung sieht nur die Wachenleitung nach Anmeldung. Ist ein Code in falsche Hände geraten, erzeugt sie mit einem Klick einen neuen.</p>
+          </div>
+          <figure class="scan" role="img" aria-label="Aushang mit QR-Code in der Fahrzeughalle und ein Fahrzeughandy, das den Code scannt und sich mit der Wache verbindet">
+            <div class="poster">
+              <div class="p-head"><span class="key" aria-hidden="true"></span><span class="wm">Status 1<small>Debrief</small></span></div>
+              <div class="qr" data-qr="7"></div>
+              <b>Fahrzeughandy mit der Wache verbinden</b>
+              <span>App öffnen, „Mit Wache verbinden“, Code scannen.</span>
+            </div>
+            <div class="phone mini">
+              <div class="screen">
+                <div class="m-top">EINRICHTUNG</div>
+                <div class="m-q">Mit Wache verbinden?</div>
+                <div class="cam"><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i><div class="qr sm" data-qr="7"></div><span class="beam"></span></div>
+                <div class="found"><b>Wache erkannt</b><span>Rettungswache Musterstadt</span></div>
+                <div class="m-btn">Verbinden</div>
+              </div>
+            </div>
+            <figcaption>Beispiel. Der QR-Code enthält nur den Wachen-Code, keine Daten.</figcaption>
+          </figure>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -642,6 +719,17 @@ footer{background:var(--night);color:var(--night-ink);padding-block:40px}
     if(host&&host.hidden){ e.preventDefault(); show(host.dataset.view, el); }
   });
   show(location.hash.slice(1)==='training'?'training':'debrief', null);
+})();
+(function(){
+  var n=25, seed=7;
+  function rnd(){ seed=(seed*16807)%2147483647; return seed/2147483647; }
+  var m=[]; for(var y=0;y<n;y++){ m[y]=[]; for(var x=0;x<n;x++) m[y][x]=rnd()>0.52; }
+  function finder(ox,oy){ for(var y=-1;y<8;y++) for(var x=-1;x<8;x++){ var X=ox+x,Y=oy+y; if(X<0||Y<0||X>=n||Y>=n) continue; var d=Math.max(Math.abs(x-3),Math.abs(y-3)); m[Y][X]=(x>=0&&y>=0&&x<7&&y<7)&&(d===3||d<=1); } }
+  finder(0,0); finder(n-7,0); finder(0,n-7);
+  for(var i=8;i<n-8;i++){ m[6][i]=i%2===0; m[i][6]=i%2===0; }
+  var r=''; for(var y=0;y<n;y++) for(var x=0;x<n;x++) if(m[y][x]) r+='M'+x+' '+y+'h1v1h-1z';
+  var svg='<svg viewBox="-2 -2 '+(n+4)+' '+(n+4)+'" shape-rendering="crispEdges" aria-hidden="true"><rect x="-2" y="-2" width="'+(n+4)+'" height="'+(n+4)+'" fill="#FFFFFF"/><path d="'+r+'" fill="#12181E"/></svg>';
+  document.querySelectorAll('[data-qr]').forEach(function(el){ el.innerHTML=svg; });
 })();
 (function(){
   var lb=document.getElementById('loadform'), box=document.getElementById('formbox');
