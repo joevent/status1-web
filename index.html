@@ -234,6 +234,19 @@ section{padding-block:clamp(56px,8vw,104px)}
 @media (max-width:440px){ .row{grid-template-columns:96px minmax(0,1fr) 46px;gap:8px;font-size:13.5px} }
 
 .outcomes{margin-top:clamp(36px,5vw,56px)}
+.report{margin-top:clamp(48px,7vw,88px);display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,4vw,56px);align-items:center}
+@media (max-width:860px){ .report{grid-template-columns:minmax(0,1fr)} }
+.report-text{display:flex;flex-direction:column;gap:14px;min-width:0}
+.report-text h3{font-size:clamp(30px,3.6vw,40px)}
+.report-text p{color:var(--muted)}
+.report-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.report-list li{display:flex;flex-direction:column;gap:2px;padding-block:10px;border-top:1px solid var(--line)}
+.report-list b{font-family:var(--display);font-size:21px;line-height:1.15}
+.report-list span{font-size:15.5px;color:var(--muted)}
+.report-text .btn{align-self:flex-start}
+.report-fig{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}
+.report-fig img{display:block;width:100%;height:auto;max-width:100%;filter:drop-shadow(0 18px 28px rgba(18,24,30,.18))}
+.report-fig figcaption{font-size:13px;color:var(--muted)}
 .point .k{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
 .k.pos{color:var(--pos)} .k.neg{color:var(--neg)} .k.acc{color:var(--accent-text)}
 
@@ -532,6 +545,31 @@ footer{background:var(--night);color:var(--night-ink);padding-block:40px}
         <div class="point"><span class="k pos">Was gut läuft</span><h3>Gutes übertragen</h3><p>Mit einer Notaufnahme läuft die Übergabe immer reibungslos, mit einer anderen nicht. Was machen die einen anders, und lässt sich das übertragen? Gute Abläufe werden so bewusst weitergegeben statt zufällig.</p></div>
         <div class="point"><span class="k neg">Was hakt</span><h3>Früh erkennen</h3><p>Drei oder vier Fahrzeuge melden unabhängig voneinander dasselbe Problem. Die Wache kann handeln, bevor daraus ein kritisches Ereignis wird.</p></div>
         <div class="point"><span class="k acc">Was fehlt</span><h3>Fortbildung gezielt planen</h3><p>Wird „Eigenschutz“ immer wieder genannt, weil er nicht umgesetzt wurde oder nicht umgesetzt werden konnte, wird er zum Fortbildungsthema. Die Auswertung liefert die Themen, der CRM-Workshop die Werkzeuge.</p></div>
+      </div>
+
+      <div class="report">
+        <div class="report-text">
+          <span class="eyebrow">Der Bericht</span>
+          <h3>Alles auf vier Seiten, als PDF</h3>
+          <p>Die App erstellt aus der Auswertung einen gestalteten Bericht, direkt auf dem Handy und ohne Server. Er lässt sich als PDF speichern, per Mail weitergeben oder ausdrucken.</p>
+          <ul class="report-list">
+            <li><b>Auf einen Blick</b><span>Die drei größten Stärken und die drei wichtigsten Verbesserungsthemen, dazu die Veränderung zum letzten Zeitraum.</span></li>
+            <li><b>Alle Schlagworte</b><span>Gegenübergestellt nach „lief gut“ und „besser machen“, gegliedert nach Team, Ablauf, Schnittstellen und Mensch.</span></li>
+            <li><b>Schnittstellen im Detail</b><span>Kliniken und Leitstellen mit den häufigsten Unterpunkten, unter Beachtung der Mindestzahl.</span></li>
+            <li><b>Für die Wachenbesprechung</b><span>Die Lehren aus den Einsätzen und eine Vorlage für Maßnahmen, Zuständigkeit und Termin.</span></li>
+          </ul>
+          <a class="btn ghost" href="beispielbericht.pdf" target="_blank" rel="noopener">Beispielbericht ansehen (PDF)</a>
+        </div>
+        <figure class="report-fig">
+          <img src="img/bericht-vorschau.png" width="1400" height="941" alt="Vier Seiten eines Beispielberichts: Auf einen Blick mit Stärken und Verbesserungsthemen, alle Schlagworte als Balkendiagramm, Details zu Kliniken und Leitstellen, Lehren und Vorlage für die Wachenbesprechung" loading="lazy">
+          <figcaption>Beispielbericht mit Demodaten einer Wache und drei Fahrzeugen.</figcaption>
+        </figure>
+      </div>
+
+      <div class="cols3 outcomes">
+        <div class="point"><span class="k acc">Zusammenführen</span><h3>Mehrere Fahrzeuge, ein Bericht</h3><p>Jedes Fahrzeughandy gibt seinen Stand als QR-Code oder Datei weiter, ein Gerät sammelt ein. Im gemeinsamen Bericht stehen nur Summen, nicht welches Fahrzeug was gemeldet hat.</p></div>
+        <div class="point"><span class="k acc">Abschluss</span><h3>Erst speichern, dann zurücksetzen</h3><p>Die Zähler lassen sich erst zurücksetzen, wenn der Bericht erstellt und als gespeichert bestätigt ist. Ein versehentlicher Abschluss lässt sich rückgängig machen.</p></div>
+        <div class="point"><span class="k acc">Vergleich</span><h3>Wirkt die Maßnahme?</h3><p>Vom abgeschlossenen Zeitraum bleiben nur die Summen. Der nächste Bericht zeigt daran, welche Themen häufiger oder seltener genannt werden.</p></div>
       </div>
     </div>
   </section>
